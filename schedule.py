@@ -49,4 +49,10 @@ class Schedule():
         else:
             print("can't sort by "+str(field)+" yet")
             return self
+        
+    def times(self,vals):
+        ''' Author: Kelly Zhang'''
+        ''' enrolled filters for enrollment numbers in the list of vals'''
+        return Schedule([course for course in self.courses if course['times'] in vals])
+
  

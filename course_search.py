@@ -69,7 +69,7 @@ def topmenu():
             times = input("timeofday:")
             schedule = schedule.times([times])
         elif command == 'section':
-            '''Author: Zheyu Yan'''
+            '''Author: Zheyu Yan  Date: Feb. 17th'''
             section = input("enter the section:")
             schedule = schedule.section([section])
 

@@ -14,14 +14,13 @@ TOP_LEVEL_MENU = '''
 quit
 reset
 term  (filter by term)
-course (filter by coursenum, e.g. COSI 103a)
+coursenum (filter by coursenum, e.g. COSI 103a)
 instructor (filter by instructor)
 subject (filter by subject, e.g. COSI, or LALS)
 title  (filter by phrase in title)
 description (filter by phrase in description)
 timeofday (filter by day and time, e.g. meets at 11 on Wed)
 status (filter by course status)
-independentstudy (filter by independentstudy)
 '''
 
 terms = {c['term'] for c in schedule.courses}
@@ -46,9 +45,9 @@ def topmenu():
         elif command in ['t', 'term']:
             term = input("enter a term:"+str(terms)+":")
             schedule = schedule.term([term]).sort('subject')
-        elif command == 'course':
-            course = input("enter a course number")
-            schedule = schedule.coursenum([coursenum]).sort('course')
+        elif command == 'coursenum':
+             course = input("enter a course number")
+             schedule = schedule.coursenum([coursenum])
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
@@ -62,10 +61,10 @@ def topmenu():
             ''' Author: Xianzhen Zhao '''
             status = input("enter a status:")
             schedule = schedule.status([status])
-        elif command == 'independentstudy':
+        elif command == 'times':
             ''' Author: Kelly Zhang '''
-            independent_study = input("independent study:")
-            schedule = schedule.independent_study([independent_study])
+            times = input("timeofday:")
+            schedule = schedule.times([times])
         else:
             print('command',command,'is not supported')
             continue

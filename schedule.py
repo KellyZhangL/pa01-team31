@@ -39,6 +39,10 @@ class Schedule():
         ''' enrolled filters for enrollment numbers in the list of vals'''
         return Schedule([course for course in self.courses if course['enrolled'] in vals])
 
+    def coursenum(self, num):
+        ''' coursenum filters the courses by code '''
+        return Schedule([course for course in self.courses if course['coursenum'] in num])
+            
     def subject(self,subjects):
         ''' subject filters the courses by subject '''
         return Schedule([course for course in self.courses if course['subject'] in subjects])

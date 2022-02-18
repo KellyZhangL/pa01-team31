@@ -49,10 +49,24 @@ class Schedule():
         else:
             print("can't sort by "+str(field)+" yet")
             return self
-        
+    
+    def title(self,titles): 
+        ''' title filters the courses by course title '''
+        return Schedule([course for course in self.courses if course['name'] in titles])
+    
+    def description(self,des):
+        ''' description filters the courses by course decription '''
+        des = str(des[0]).split()
+        return Schedule([course for course in self.courses if set(des).issubset(course['description'].split())])
+    
     def times(self,vals):
         ''' Author: Kelly Zhang'''
         ''' enrolled filters for enrollment numbers in the list of vals'''
         return Schedule([course for course in self.courses if course['times'] in vals])
+    
+    def status(self,status):
+        ''' Author: Xianzhen Zhao'''
+        ''' status filters the courses by course status '''
+        return Schedule([course for course in self.courses if course['status_text'] in status])
 
  

@@ -47,6 +47,16 @@ def topmenu():
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
+        elif command == 'title':
+            title = input("enter a title:")
+            schedule = schedule.title([title])
+        elif command == 'description':
+            des = input("enter a description:")
+            schedule = schedule.description([des])
+        elif command == 'status':
+            ''' Author: Xianzhen Zhao '''
+            status = input("enter a status:")
+            schedule = schedule.status([status])
         else:
             print('command',command,'is not supported')
             continue

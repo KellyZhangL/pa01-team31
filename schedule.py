@@ -55,4 +55,8 @@ class Schedule():
         ''' enrolled filters for enrollment numbers in the list of vals'''
         return Schedule([course for course in self.courses if course['times'] in vals])
 
+    def status(self, keys):
+        ''' Author: Zheyu Yan'''
+        return Schedule([course for course in self.courses if course['status'] in keys])
+
  

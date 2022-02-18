@@ -19,7 +19,7 @@ instructor (filter by instructor)
 subject (filter by subject, e.g. COSI, or LALS)
 title  (filter by phrase in title)
 description (filter by phrase in description)
-timeofday (filter by day and time, e.g. meets at 11 on Wed)
+timeofday (filter by day and time, e.g. meets at 11 on wed)
 status (filter by course status)
 '''
 
@@ -64,10 +64,14 @@ def topmenu():
             ''' Author: Xianzhen Zhao '''
             status = input("enter a status:")
             schedule = schedule.status([status])
+        elif command == 'days':
+            ''' Author: Kelly Zhang '''
+            days = input("day:")
+            schedule = schedule.days(days)
         elif command == 'times':
             ''' Author: Kelly Zhang '''
             times = input("timeofday:")
-            schedule = schedule.times([times])
+            schedule = schedule.times(times)
         elif command == 'section':
             '''Author: Zheyu Yan'''
             section = input("enter the section:")

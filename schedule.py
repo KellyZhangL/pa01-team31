@@ -62,7 +62,12 @@ class Schedule():
     def times(self,vals):
         ''' Author: Kelly Zhang'''
         ''' times filters for course times in the list of vals'''
-        return Schedule([course for course in self.courses if course['times'] in vals])
+        return Schedule([course for course in self.courses if course['times'] and course['times'][0]['start']])
+    
+    def days(self,vals):
+        ''' Author: Kelly Zhang'''
+        ''' days filters for course days in the list of vals'''
+        return Schedule([course for course in self.courses if course['times'] and vals in course['times'][0]['days']])
     
     def status(self,status):
         ''' Author: Xianzhen Zhao'''

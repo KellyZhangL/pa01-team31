@@ -61,7 +61,6 @@ class Schedule():
     
     def times(self,vals):
         ''' Author: Kelly Zhang'''
-        ''' small change for GitHub demonstration'''
         ''' times filters for course times in the list of vals'''
         return Schedule([course for course in self.courses if course['times'] and course['times'][0]['start']])
     

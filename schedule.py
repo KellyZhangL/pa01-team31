@@ -61,7 +61,7 @@ class Schedule():
     
     def times(self,vals):
         ''' Author: Kelly Zhang'''
-        ''' enrolled filters for enrollment numbers in the list of vals'''
+        ''' times filters for course times in the list of vals'''
         return Schedule([course for course in self.courses if course['times'] in vals])
     
     def status(self,status):

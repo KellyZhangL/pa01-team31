@@ -69,8 +69,12 @@ class Schedule():
         ''' status filters the courses by course status '''
         return Schedule([course for course in self.courses if course['status_text'] in status])
 
-    def status(self, keys):
+    def coursenum(self, nums):
         ''' Author: Zheyu Yan'''
-        return Schedule([course for course in self.courses if course['status'] in keys])
+        return Schedule([course for course in self.courses if course['coursenum'] in nums])
+    def section(self, sections):
+        '''Author: Zheyu Yan'''
+        return Schedule([course for course in self.courses if course['section'] in sections])
+
 
  

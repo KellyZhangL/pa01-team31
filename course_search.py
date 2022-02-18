@@ -46,9 +46,12 @@ def topmenu():
         elif command in ['t', 'term']:
             term = input("enter a term:"+str(terms)+":")
             schedule = schedule.term([term]).sort('subject')
-        elif command == 'course':
-            course = input("enter a course number")
-            schedule = schedule.coursenum([coursenum]).sort('course')
+        elif command in ['c','course']:
+            num = input ("enter the course number:")
+            schedule = schedule.coursenum([num])
+        elif command in ['i','instructor']:
+            email = input("enter the instructor's email:")
+            schedule = schedule.email([email])
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
@@ -66,6 +69,11 @@ def topmenu():
             ''' Author: Kelly Zhang '''
             independent_study = input("independent study:")
             schedule = schedule.independent_study([independent_study])
+        elif command == 'section':
+            '''Author: Zheyu Yan'''
+            section = input("enter the section:")
+            schedule = schedule.section([section])
+
         else:
             print('command',command,'is not supported')
             continue
